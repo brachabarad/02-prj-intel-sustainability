@@ -1,20 +1,43 @@
-/* Apply a background color to the body */
+/* Reset default styles for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding and border in element width/height */
+}
+
+/* Body styles */
 body {
-  background-color: #0071C5; /* Intel Blue */
+  background-color: #6ab6e9; /* Light blue background for the whole page */
   color: #333; /* Dark gray for readability */
   font-family: 'Open Sans', Arial, sans-serif; /* Body text uses Open Sans */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
 }
 
 /* Style the header section for better contrast */
 header {
-  background-color: white; /* White background for contrast */
   color: #0071C5; /* Intel Blue for text */
   text-align: center;
   padding: 20px;
   border-bottom: 2px solid #005a9c; /* Slightly darker blue for separation */
   font-family: 'Arial', 'Helvetica', sans-serif; /* Consistent font */
+  margin: 0; /* Remove default margin */
+  padding: 20px; /* Add consistent padding inside the header */
+  text-align: center; /* Center-align the content */
+}
+
+/* Header logo (remove border) */
+header img {
+  width: 150px; /* Resize the image to a width of 150px */
+  height: auto; /* Maintain the aspect ratio */
+  margin: 20px auto; /* Add 20px margin above and below, and center horizontally */
+  display: block; /* Ensure the image is treated as a block element */
+  padding: 0; /* Remove any padding */
+}
+
+/* Adjust the h1 spacing */
+header h1 {
+  margin: 10px 0; /* Add a small margin above and below the h1 */
+  font-size: 36px; /* Adjust font size for better visibility */
+  color: #0071C5; /* Intel Blue for the heading */
 }
 
 /* Style the footer */
@@ -325,10 +348,10 @@ section#timeline div:hover {
 /* Style for the timeline header */
 .timeline-header {
   background-color: #e6f2fa; /* Light blue background */
-  padding: 20px; /* Add padding around the header */
+  padding: 10px; /* Reduce padding around the header */
   text-align: center; /* Center-align the text */
   border-radius: 8px; /* Optional: Add rounded corners */
-  margin-bottom: 20px; /* Add space below the header */
+  margin: 0; /* Remove any margin to eliminate extra space */
 }
 
 .timeline-header h2 {
@@ -336,6 +359,19 @@ section#timeline div:hover {
   color: #005a9c; /* Slightly darker Intel Blue for the text */
   margin: 0; /* Remove default margin */
   font-family: 'Roboto', Arial, sans-serif; /* Use Roboto for the header */
+}
+
+/* Center the additional image container */
+.centered-image {
+  text-align: center; /* Center-align the content inside the div */
+  margin: 20px 0; /* Add vertical spacing above and below the image */
+}
+
+/* Center the image inside the container */
+.centered-image img {
+  display: inline-block; /* Treat the image as an inline-block element */
+  max-width: 100%; /* Ensure the image fits within the container */
+  height: auto; /* Maintain the aspect ratio */
 }
 
 /* Add Google Fonts */
