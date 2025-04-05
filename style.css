@@ -1,49 +1,46 @@
-/* Reset default styles for all elements */
+/* Reset default styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box; /* Include padding and border in element width/height */
 }
 
-/* Body styles */
-body {
-  background-color: #6ab6e9; /* Light blue background for the whole page */
-  color: #333; /* Dark gray for readability */
-  font-family: 'Open Sans', Arial, sans-serif; /* Body text uses Open Sans */
+/* Body and general text styles */
+body, html {
+  background-color: #00C7FD; /* Light blue background */
+  color: #333; /* Dark gray text for readability */
+  font-family: 'Open Sans', Arial, sans-serif; /* Use Open Sans for body text */
 }
 
 /* Header styles */
 header {
-  color: #0071C5; /* Intel Blue for text */
-  text-align: center;
+  text-align: center; /* Center-align header content */
   padding: 20px;
-  border-bottom: 2px solid #005a9c; /* Slightly darker blue for separation */
+  border-bottom: 2px solid #00C7FD; /* Add a bottom border */
 }
 
 header img {
-  width: 150px; /* Resize the image to a width of 150px */
-  height: auto; /* Maintain the aspect ratio */
-  margin: 20px auto; /* Add 20px margin above and below, and center horizontally */
-  display: block; /* Ensure the image is treated as a block element */
+  width: 150px; /* Resize the logo */
+  margin: 20px auto; /* Center the logo */
+  display: block; /* Treat the logo as a block element */
+  border-radius: 10px; /* Add rounded corners */
 }
 
 header h1 {
-  margin: 10px 0; /* Add a small margin above and below the h1 */
-  font-size: 36px; /* Adjust font size for better visibility */
+  font-size: 36px; /* Large font size for the main heading */
+  color: #0071C5; /* Intel Blue for the heading */
 }
 
 /* Navigation bar styles */
 nav {
-  background-color: #005a9c; /* Darker blue for navigation */
+  background-color: #0068B5; /* Dark blue background */
   padding: 10px;
 }
 
 nav ul {
   list-style: none; /* Remove bullet points */
-  display: flex; /* Use Flexbox for layout */
-  justify-content: center; /* Center the navigation links */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+  display: flex; /* Arrange links horizontally */
+  justify-content: center; /* Center the links */
 }
 
 nav ul li {
@@ -53,7 +50,6 @@ nav ul li {
 nav ul li a {
   color: white; /* White text for links */
   text-decoration: none; /* Remove underline */
-  font-size: 16px; /* Font size for links */
 }
 
 nav ul li a:hover {
@@ -81,13 +77,13 @@ nav ul li a:hover {
   justify-content: center; /* Center the cards horizontally */
   max-width: 100%; /* Ensure the section doesn't exceed the screen width */
   box-sizing: border-box; /* Include padding in the width calculation */
-  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  overflow-x: unset; /* Remove horizontal scrolling */
 }
 
 /* Style the timeline cards */
-section#timeline div {
+section#timeline .timeline-card {
   background-color: white; /* White background for cards */
-  color: #0071C5; /* Intel Blue for text */
+  color: #0068B5; /* Intel Blue for text */
   border: 1px solid #ccc; /* Light border for separation */
   border-radius: 8px; /* Rounded corners */
   padding: 20px; /* Add padding inside the cards */
@@ -95,6 +91,21 @@ section#timeline div {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
   text-align: center; /* Center-align text inside the cards */
   flex-shrink: 0; /* Prevent cards from shrinking */
+  transition: 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Add hover effect for individual cards */
+.timeline-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a larger shadow on hover */
+  transform: scale(1.05); /* Slightly enlarge the card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Highlighted timeline card styles */
+.timeline-card.highlight {
+  background-color: #004080; /* Dark blue background */
+  color: white; /* White text */
+  text-align: center; /* Center-align text */
 }
 
 /* Responsive layout for smaller screens */
@@ -110,16 +121,33 @@ section#timeline div {
   }
 }
 
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  section#timeline .timeline-card {
+    width: 100%; /* Use full width for cards */
+    margin-bottom: 20px; /* Add spacing between cards */
+  }
+
+  section#timeline .timeline-card img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .row.flex-nowrap {
+    flex-wrap: wrap !important; /* Ensure cards wrap properly */
+  }
+}
+
 /* Style the card headings */
 section#timeline div h2 {
   font-size: 24px; /* Larger font size for the year */
-  color: #005a9c; /* Slightly darker Intel Blue for emphasis */
+  color: #0068B5; /* Slightly darker Intel Blue for emphasis */
   margin-bottom: 10px; /* Add space below the heading */
 }
 
 section#timeline div h3 {
   font-size: 18px; /* Medium font size for the milestone title */
-  color: #0071C5; /* Intel Blue for consistency */
+  color: #0068B5; /* Intel Blue for consistency */
   margin-bottom: 10px; /* Add space below the subheading */
 }
 
@@ -128,6 +156,14 @@ section#timeline div p {
   font-size: 14px; /* Smaller font size for the description */
   line-height: 1.6; /* Add line spacing for better readability */
   color: #333; /* Dark gray for contrast against the white background */
+  margin-bottom: 15px; /* Add space below the text */
+}
+
+/* Style the card text */
+section#timeline .timeline-card p, 
+#sustainability .col-md-4 p {
+  text-align: justify; /* Justify the text for better alignment */
+  line-height: 1.6; /* Add line spacing for readability */
   margin-bottom: 15px; /* Add space below the text */
 }
 
@@ -141,19 +177,12 @@ section#timeline div img {
   margin-bottom: 10px; /* Add space below the image */
 }
 
-/* Add hover effect for cards */
-section#timeline div:hover {
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
-  transform: scale(1.02); /* Slight zoom effect */
-  transition: 0.3s; /* Smooth transition for hover effect */
-}
-
 /* Scroll-to-top button styling */
 #scrollToTop {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #005a9c; /* Darker blue */
+  background-color: #0068B5; /* Darker blue */
   color: white;
   border: none;
   border-radius: 50%;
@@ -165,7 +194,7 @@ section#timeline div:hover {
 }
 
 #scrollToTop:hover {
-  background-color: #003f73; /* Even darker blue on hover */
+  background-color: #0068B5; /* Even darker blue on hover */
 }
 
 /* Card container */
@@ -176,7 +205,7 @@ section#timeline div:hover {
   position: relative; /* Position relative for child elements */
   font-family: 'Arial', 'Helvetica', sans-serif; /* Consistent font for readability */
   background-color: white; /* White background for cards */
-  color: #0071C5; /* Intel Blue for text */
+  color: #0068B5; /* Intel Blue for text */
   border: 1px solid #ccc; /* Light border for separation */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
@@ -197,14 +226,14 @@ section#timeline div:hover {
 
 .card h2 {
   font-size: 24px; /* Larger font size for the year */
-  color: #005a9c; /* Slightly darker Intel Blue for emphasis */
+  color: #0068B5; /* Slightly darker Intel Blue for emphasis */
   font-family: 'Roboto', Arial, sans-serif; /* Use Roboto for the year */
 }
 
 .card h3 {
   font-size: 18px; /* Medium font size for the milestone title */
-  color: #0071C5; /* Intel Blue for consistency */
-  font-family: 'Roboto', Arial, sans-serif; /* Use Roboto for the title */
+  color: #0068B5; /* Intel Blue for consistency */
+  font-family: 'Roboto', Arial, sans-serif; /* Use Robhio for the title */
 }
 
 .card p {
@@ -235,70 +264,10 @@ section#timeline div:hover {
   line-height: 1.6; /* Add line spacing for readability */
 }
 
-/* Reveal the details on hover */
-.card:hover .details {
-  display: block; /* Show the details when hovering over the card */
-}
-
-/* Inner card with flipping effect */
-.card-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d; /* Enable 3D transformation */
-  transition: transform 0.6s; /* Smooth flipping transition */
-}
-
-/* Flip the card on hover */
-.card:hover .card-inner {
-  transform: rotateY(180deg); /* Flip the card */
-}
-
-/* Front and back sides of the card */
-.card-front, .card-back {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  backface-visibility: hidden; /* Hide the back side when not visible */
-  border-radius: 8px; /* Rounded corners */
-  overflow: hidden; /* Prevent content overflow */
-  display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 10px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: transform 0.6s; /* Smooth flipping transition */
-}
-
-/* Front side of the card */
-.card-front {
-  background-color: white; /* White background for the front */
-  color: #0071C5; /* Intel Blue for text */
-  z-index: 2; /* Ensure the front is on top initially */
-}
-
-/* Back side of the card */
-.card-back {
-  background-color: white; /* White background for the back */
-  color: black; /* Black text for the paragraph */
-  transform: rotateY(180deg); /* Initially flipped */
-  z-index: 1; /* Ensure the back is behind initially */
-}
-
-/* Flip the card on hover */
-.card:hover .card-front {
-  transform: rotateY(180deg); /* Flip the front side */
-}
-
-.card:hover .card-back {
-  transform: rotateY(0); /* Bring the back side to the front */
-}
-
 /* Style the year */
 .card h2 {
   font-size: 24px; /* Larger font size for the year */
+  font-weight: bold; /* Make the text bold */
   color: #005a9c; /* Slightly darker Intel Blue for emphasis */
   margin-bottom: 10px; /* Add space below the year */
   font-family: 'Roboto', Arial, sans-serif; /* Use Roboto for the year */
@@ -326,33 +295,79 @@ section#timeline div:hover {
   color: black; /* Black text for contrast */
 }
 
-/* Style for the timeline header */
+/* Adjustments for RTL compatibility */
 .timeline-header {
   background-color: #e6f2fa; /* Light blue background */
-  padding: 10px; /* Reduce padding around the header */
+  padding: 10px; /* Add padding around the header */
   text-align: center; /* Center-align the text */
   border-radius: 8px; /* Optional: Add rounded corners */
-  margin: 0; /* Remove any margin to eliminate extra space */
+  margin-inline-start: 0; /* Replace margin-left with margin-inline-start for RTL compatibility */
+  margin-inline-end: 0; /* Replace margin-right with margin-inline-end for RTL compatibility */
 }
 
-.timeline-header h2 {
-  font-size: 28px; /* Larger font size for the header */
-  color: #005a9c; /* Slightly darker Intel Blue for the text */
-  margin: 0; /* Remove default margin */
-  font-family: 'Roboto', Arial, sans-serif; /* Use Roboto for the header */
+/* Example for navigation links */
+nav ul {
+  list-style: none; /* Remove default list styling */
+  display: flex; /* Display links in a row */
+  justify-content: flex-end; /* Align links to the end of the row */
+  padding-inline-start: 0; /* Replace padding-left with padding-inline-start for RTL compatibility */
 }
 
-/* Center the additional image container */
-.centered-image {
-  text-align: center; /* Center-align the content inside the div */
-  margin: 20px 0; /* Add vertical spacing above and below the image */
+nav ul li {
+  margin-inline-start: 15px; /* Replace margin-left with margin-inline-start for RTL compatibility */
 }
 
-/* Center the image inside the container */
-.centered-image img {
-  display: inline-block; /* Treat the image as an inline-block element */
-  max-width: 100%; /* Ensure the image fits within the container */
-  height: auto; /* Maintain the aspect ratio */
+/* Style the year */
+.card h2 {
+  font-size: 24px; /* Larger font size for the year */
+  font-weight: bold; /* Make the text bold */
+  color: #005a9c; /* Slightly darker Intel Blue for emphasis */
+  margin-bottom: 10px; /* Add space below the year */
+  font-family: 'Roboto', Arial, sans-serif; /* Use Roboto for the year */
+}
+
+/* Style the title */
+.card h3 {
+  font-size: 18px; /* Medium font size for the milestone title */
+  color: #0071C5; /* Intel Blue for consistency */
+  margin-bottom: 10px; /* Add space below the title */
+  font-family: 'Roboto', Arial, sans-serif; /* Use Roboto for the title */
+}
+
+/* Style the image */
+.card img {
+  max-width: 100%; /* Ensure images fit within the card */
+  border-radius: 8px; /* Rounded corners for images */
+  margin-bottom: 10px; /* Add space below the image */
+}
+
+/* Style the paragraph text on the back */
+.card-back p {
+  font-size: 14px; /* Smaller font size for the description */
+  line-height: 1.6; /* Add line spacing for readability */
+  color: black; /* Black text for contrast */
+}
+
+/* Adjustments for RTL compatibility */
+.timeline-header {
+  background-color: #e6f2fa; /* Light blue background */
+  padding: 10px; /* Add padding around the header */
+  text-align: center; /* Center-align the text */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  margin-inline-start: 0; /* Replace margin-left with margin-inline-start for RTL compatibility */
+  margin-inline-end: 0; /* Replace margin-right with margin-inline-end for RTL compatibility */
+}
+
+/* Example for navigation links */
+nav ul {
+  list-style: none; /* Remove default list styling */
+  display: flex; /* Display links in a row */
+  justify-content: flex-end; /* Align links to the end of the row */
+  padding-inline-start: 0; /* Replace padding-left with padding-inline-start for RTL compatibility */
+}
+
+nav ul li {
+  margin-inline-start: 15px; /* Replace margin-left with margin-inline-start for RTL compatibility */
 }
 
 /* Add Google Fonts */
@@ -383,9 +398,27 @@ div img {
 
 /* Footer styles */
 footer {
-  background-color: #005a9c; /* Darker blue for footer */
-  color: white;
-  text-align: center;
+  background-color: #005a9c; /* Dark blue background */
+  color: white; /* White text */
+  text-align: center; /* Center-align footer content */
   padding: 10px;
-  margin-top: 20px;
+}
+
+/* Section styles */
+#sustainability .col-md-4 {
+  background-color: #005a9c; /* Blue background for columns */
+  color: white; /* White text for contrast */
+  padding: 15px; /* Add padding inside columns */
+  margin-bottom: 20px; /* Add spacing between rows */
+  border-radius: 8px; /* Rounded corners */
+  text-align: center; /* Center-align text */
+}
+
+#sustainability h2 {
+  color: #005a9c; /* White text for headings */
+}
+
+/* Justify text in columns */
+#sustainability .col-lg-4 p {
+  text-align: justify; /* Justify the text in the paragraphs */
 }
