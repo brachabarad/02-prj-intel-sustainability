@@ -29,6 +29,7 @@ header img {
 header h1 {
   font-size: 36px; /* Large font size for the main heading */
   color: #0071C5; /* Intel Blue for the heading */
+  text-align: start; /* Align text based on the document direction */
 }
 
 /* Navigation bar styles */
@@ -50,6 +51,7 @@ nav ul li {
 nav ul li a {
   color: white; /* White text for links */
   text-decoration: none; /* Remove underline */
+  text-align: start; /* Align links based on the document direction */
 }
 
 nav ul li a:hover {
@@ -295,79 +297,16 @@ section#timeline div img {
   color: black; /* Black text for contrast */
 }
 
-/* Adjustments for RTL compatibility */
-.timeline-header {
-  background-color: #e6f2fa; /* Light blue background */
-  padding: 10px; /* Add padding around the header */
-  text-align: center; /* Center-align the text */
-  border-radius: 8px; /* Optional: Add rounded corners */
-  margin-inline-start: 0; /* Replace margin-left with margin-inline-start for RTL compatibility */
-  margin-inline-end: 0; /* Replace margin-right with margin-inline-end for RTL compatibility */
-}
-
 /* Example for navigation links */
 nav ul {
   list-style: none; /* Remove default list styling */
   display: flex; /* Display links in a row */
-  justify-content: flex-end; /* Align links to the end of the row */
-  padding-inline-start: 0; /* Replace padding-left with padding-inline-start for RTL compatibility */
+  justify-content: center; /* Center-align the links */
+  padding-left: 0; /* Use LTR-compatible padding */
 }
 
 nav ul li {
-  margin-inline-start: 15px; /* Replace margin-left with margin-inline-start for RTL compatibility */
-}
-
-/* Style the year */
-.card h2 {
-  font-size: 24px; /* Larger font size for the year */
-  font-weight: bold; /* Make the text bold */
-  color: #005a9c; /* Slightly darker Intel Blue for emphasis */
-  margin-bottom: 10px; /* Add space below the year */
-  font-family: 'Roboto', Arial, sans-serif; /* Use Roboto for the year */
-}
-
-/* Style the title */
-.card h3 {
-  font-size: 18px; /* Medium font size for the milestone title */
-  color: #0071C5; /* Intel Blue for consistency */
-  margin-bottom: 10px; /* Add space below the title */
-  font-family: 'Roboto', Arial, sans-serif; /* Use Roboto for the title */
-}
-
-/* Style the image */
-.card img {
-  max-width: 100%; /* Ensure images fit within the card */
-  border-radius: 8px; /* Rounded corners for images */
-  margin-bottom: 10px; /* Add space below the image */
-}
-
-/* Style the paragraph text on the back */
-.card-back p {
-  font-size: 14px; /* Smaller font size for the description */
-  line-height: 1.6; /* Add line spacing for readability */
-  color: black; /* Black text for contrast */
-}
-
-/* Adjustments for RTL compatibility */
-.timeline-header {
-  background-color: #e6f2fa; /* Light blue background */
-  padding: 10px; /* Add padding around the header */
-  text-align: center; /* Center-align the text */
-  border-radius: 8px; /* Optional: Add rounded corners */
-  margin-inline-start: 0; /* Replace margin-left with margin-inline-start for RTL compatibility */
-  margin-inline-end: 0; /* Replace margin-right with margin-inline-end for RTL compatibility */
-}
-
-/* Example for navigation links */
-nav ul {
-  list-style: none; /* Remove default list styling */
-  display: flex; /* Display links in a row */
-  justify-content: flex-end; /* Align links to the end of the row */
-  padding-inline-start: 0; /* Replace padding-left with padding-inline-start for RTL compatibility */
-}
-
-nav ul li {
-  margin-inline-start: 15px; /* Replace margin-left with margin-inline-start for RTL compatibility */
+  margin-left: 15px; /* Use LTR-compatible margin */
 }
 
 /* Add Google Fonts */

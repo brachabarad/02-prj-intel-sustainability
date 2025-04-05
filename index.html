@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +10,14 @@
 
     /* High-contrast mode styles */
     body.high-contrast {
-      background-color: black;
-      color: white;
+      background-color: black; /* Black background for high contrast */
+      color: yellow; /* Yellow text for readability */
     }
     body.high-contrast a {
-      color: yellow;
+      color: cyan; /* Cyan links for better visibility */
     }
     body.high-contrast img {
-      filter: brightness(0.8);
+      filter: brightness(1.5); /* Brighten images for better visibility */
     }
 
     /* Neutral color palette */
@@ -114,22 +114,38 @@
 
 </head>
 <body>
-
   <!-- Navigation Bar -->
-  <nav>
-    <ul>
-      <li><a href="#timeline">Timeline</a></li>
-      <li><a href="#sustainability">Sustainability Goals</a></li>
-      <li><a href="#contact">Contact Us</a></li>
-    </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+    
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#top">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#timeline">Timeline</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#sustainability">Sustainability Goals</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
+  <!-- Add spacing to prevent content overlap with fixed Navbar -->
+  <div style="margin-top: 70px;"></div>
+
   <!-- Header / Hero Section -->
-  <header>
-    <div>
-      <img src="img/intel-header-logo.svg" alt="Intel logo with a blue background">
-      <h1>Sustainability Through the Ages</h1>
-      <p>
+  <header class="py-5" style="background-color: #0068B5;">
+    <div class="container text-center">
+      <img src="img/intel-header-logo.svg" alt="Intel logo with a blue background" class="mb-4" style="width: 150px; border: 2px solid white; border-radius: 10px; padding: 5px;">
+      <h1 class="display-4 text-white text-center">Sustainability Through the Ages</h1>
+      <p class="lead text-white">
         Explore Intel's journey through time, discovering how our commitment
         to innovation has shaped a more sustainable future for technology 
         and our planet.
@@ -148,8 +164,8 @@
     <div class="container">
       <div class="row">
         <!-- Highlighted Card -->
-        <div class="col-lg-12 col-md-12 col-12 timeline-card highlight" style="background-color: #0068B5;"> 
-            <h1 style="color: white; font-size: 2.8rem; text-align: center; margin-bottom: 20px;">Intel's Sustainability Timeline</h1>
+        <div class="col-lg-12 col-md-12 col-12 timeline-card highlight text-white text-center" style="background-color: #0068B5;">
+          <h1>Intel's Sustainability Timeline</h1>
         </div>
         
         <!-- Timeline Cards -->
@@ -268,20 +284,19 @@
 
 
   <!-- Subscription Form -->
-  <section class="py-5 bg-white">
+  <section class="py-5" id="subscription" style="background-color: #f0f8ff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
     <div class="container">
-      <h2 class="text-center mb-4">Subscribe to our Newsletter</h2>
+      <h2 class="text-center mb-4" style="color: #0068B5;">Subscribe to our Newsletter</h2>
       <form class="row justify-content-center">
         <div class="col-md-6">
           <div class="mb-3">
-            <label for="emailInput" class="form-label">Email address</label>
+            <label for="emailInput" class="form-label" style="color: #333;">Email address</label>
             <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
           </div>
           <button type="submit" class="btn btn-primary w-100">Subscribe</button>
         </div>
       </form>
     </div>
-  </div>
   </section>
 
   <!-- Footer -->
@@ -309,13 +324,9 @@
     }
 
     function toggleHighContrast() {
+      // Toggle the high-contrast class on the body element
       document.body.classList.toggle('high-contrast');
     }
-
-    // Simplified language direction logic
-    const htmlElement = document.documentElement;
-    const rtlLanguages = ['ar', 'he', 'fa', 'ur'];
-    htmlElement.dir = rtlLanguages.includes(htmlElement.lang) ? 'rtl' : 'ltr';
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
