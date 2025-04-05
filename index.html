@@ -292,12 +292,17 @@
   <section class="py-5" id="subscription" style="background-color: #f0f8ff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
     <div class="container">
       <h2 class="text-center mb-4" style="color: #0068B5;">Subscribe to our Newsletter</h2>
-      <form class="row justify-content-center">
-        <div class="col-md-6">
-          <div class="mb-3">
-            <label for="emailInput" class="form-label" style="color: #333;">Email address</label>
-            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
-          </div>
+      <form class="row justify-content-center align-items-center">
+        <!-- 1 block for the email label -->
+        <div class="col-1 d-flex align-items-center">
+          <label for="emailInput" class="form-label fw-bold" style="white-space: nowrap;">Email:</label>
+        </div>
+        <!-- 3 blocks for the email field -->
+        <div class="col-4">
+          <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
+        </div>
+        <!-- 1 block for the subscribe button -->
+        <div class="col-2">
           <button type="submit" class="btn btn-primary w-100">Subscribe</button>
         </div>
       </form>
