@@ -169,6 +169,18 @@ section#timeline .timeline-card p,
   margin-bottom: 15px; /* Add space below the text */
 }
 
+/* Initial state for card paragraph text */
+.timeline-card p {
+  opacity: 0; /* Make the text invisible initially */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+}
+
+/* On hover or focus, make the text visible */
+.timeline-card:hover p,
+.timeline-card:focus p {
+  opacity: 1; /* Fully visible text */
+}
+
 /* Style the card images */
 section#timeline div img {
   width: 250px; /* Set the width to 250px */
@@ -247,11 +259,23 @@ section#timeline div img {
   font-family: 'Open Sans', Arial, sans-serif; /* Use Open Sans for paragraphs */
 }
 
+/* Initial state for card paragraph text */
+.card p {
+  opacity: 0; /* Make the text invisible initially */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+}
+
+/* On hover or focus, make the text visible */
+.card:hover p,
+.card:focus p {
+  opacity: 1; /* Fully visible text */
+}
+
 /* Add hover effect for cards */
 .card:hover {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
   transform: scale(1.02); /* Slight zoom effect */
-  transition: 0.3s; /* Smooth transition for hover effect */
+  transition: 0.9s ; /* Smooth transition for hover effect */
 }
 
 /* Style the additional details */
